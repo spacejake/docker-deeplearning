@@ -2,7 +2,13 @@ FROM nvidia/cuda:10.1-cudnn7-devel-ubuntu18.04
 #FROM nvidia/cuda:9.0-cudnn7-devel-ubuntu16.04 
 
 # Install System Deps
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN apt-get update
+
+# Setup TZData
+ADD setup-tzdata.sh /setup-tzdata.sh
+RUN /setup-tzdata.sh
+
+RUN apt-get install -y --no-install-recommends \
         automake \
         build-essential \
         crossbuild-essential-arm64 gcc-aarch64-linux-gnu g++-aarch64-linux-gnu\
