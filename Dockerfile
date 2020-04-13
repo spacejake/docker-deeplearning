@@ -78,8 +78,8 @@ RUN pip --no-cache-dir install \
     wheel \
     setuptools \
     pyrender \
-    tensorflow==1.15.0 \
-    tensorboard==1.15.0 \
+    tensorflow==2.0.0 \
+    tensorboard==2.0.0 \
     pyyaml \
     labelImg
 
@@ -89,7 +89,7 @@ WORKDIR /workspace
 RUN chmod -R a+w /workspace
 
 # Set up Bazel
-# TFv1.15.0
+# TFv1.15.0 & 2.0
 ENV BAZEL_VERSION 0.26.1
 #TFv1.14.0
 #ENV BAZEL_VERSION 0.24.1 
