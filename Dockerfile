@@ -81,7 +81,8 @@ RUN pip --no-cache-dir install \
     tensorflow==2.0.0 \
     tensorboard==2.0.0 \
     pyyaml \
-    labelImg
+    labelImg \
+    pycocotools
 
 # Setup Work dirs
 RUN mkdir /workspace
