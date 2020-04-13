@@ -59,7 +59,7 @@ RUN conda --version
 # Python Deps
 RUN conda config --set always_yes yes --set changeps1 no 
 RUN conda update -q conda 
-RUN conda install progress protobuf=3.8.0 tqdm h5py pandas Cython contextlib2 pillow lxml matplotlib scikit-learn
+RUN conda install progress protobuf=3.10.0 tqdm h5py pandas Cython contextlib2 pillow lxml matplotlib scikit-learn
 RUN conda install pytorch torchvision cudatoolkit=10.1 -c pytorch
 RUN conda install -c conda-forge coloredlogs notebook
 
@@ -78,8 +78,8 @@ RUN pip --no-cache-dir install \
     wheel \
     setuptools \
     pyrender \
-    tensorflow==1.15.0 \
-    tensorboard==1.15.0 \
+    tensorflow==2.1.0 \
+    tensorboard==2.1.0 \
     pyyaml \
     labelImg
 
@@ -90,8 +90,10 @@ RUN chmod -R a+w /workspace
 
 # Set up Bazel
 # TFv1.15.0
-ENV BAZEL_VERSION 0.26.1
-#TFv1.14.0
+ENV BAZEL_VERSION 0.29.1
+# TFv1.15.0
+#ENV BAZEL_VERSION 0.26.1
+# TFv1.14.0
 #ENV BAZEL_VERSION 0.24.1 
 WORKDIR /
 RUN mkdir /bazel && \
