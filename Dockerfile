@@ -80,9 +80,11 @@ RUN pip --no-cache-dir install \
     pyrender \
     tensorflow==1.15.0 \
     tensorboard==1.15.0 \
-    
+    pyyaml \
+    labelImg
 
 # Setup Work dirs
+RUN mkdir /workspace
 WORKDIR /workspace
 RUN chmod -R a+w /workspace
 
