@@ -59,7 +59,7 @@ RUN conda --version
 # Python Deps
 RUN conda config --set always_yes yes --set changeps1 no 
 RUN conda update -q conda 
-RUN conda install progress protobuf=3.10.0 tqdm h5py pandas Cython contextlib2 pillow lxml matplotlib scikit-learn
+RUN conda install progress tqdm h5py pandas Cython contextlib2 pillow lxml matplotlib scikit-learn
 RUN conda install pytorch torchvision cudatoolkit=10.1 -c pytorch
 RUN conda install -c conda-forge coloredlogs notebook
 
@@ -78,10 +78,12 @@ RUN pip --no-cache-dir install \
     wheel \
     setuptools \
     pyrender \
+    protobuf==3.10.0 \
     tensorflow==2.1.0 \
     tensorboard==2.1.0 \
     pyyaml \
-    labelImg
+    labelImg \
+    pycocotools 
 
 # Setup Work dirs
 RUN mkdir /workspace
