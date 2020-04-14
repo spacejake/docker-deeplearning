@@ -66,6 +66,8 @@ RUN conda install -c conda-forge coloredlogs notebook
 RUN pip --no-cache-dir install \
     future>=0.17.1 \
     grpcio \
+    tqdm \
+    pycocotools \
     keras_applications>=1.0.8 \
     keras_preprocessing>=1.1.0 \
     mock \
