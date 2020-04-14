@@ -80,7 +80,7 @@ RUN pip --no-cache-dir install \
     wheel \
     setuptools \
     pyrender \
-    tensorflow==1.15.0 \
+    tensorflow-gpu==1.15.0 \
     tensorboard==1.15.0 \
     pyyaml \
     labelImg
