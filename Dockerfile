@@ -69,6 +69,7 @@ RUN pip --no-cache-dir install \
     keras_applications>=1.0.8 \
     keras_preprocessing>=1.1.0 \
     mock \
+    tqdm \
     numpy \
     requests \
     opencv-python \
