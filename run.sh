@@ -1,6 +1,7 @@
 #!/bin/bash
 
 declare src=$1
+declare data=$2
 
 echo "Data Path: $data_path"
 
@@ -12,6 +13,7 @@ xhost +local:root; \
     --privileged \
     -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
     -v $src:/workspace/src:rw \
-    deeplearning-cuda10-py3-ubuntu18
+    -v $data:/workspace/data:rw \
+    tfv1-15-cuda9-py3-ubuntu18
 
 
