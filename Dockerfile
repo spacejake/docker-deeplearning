@@ -63,6 +63,9 @@ RUN conda install progress protobuf=3.8.0 tqdm h5py pandas Cython contextlib2 pi
 RUN conda install pytorch torchvision cudatoolkit=10.1 -c pytorch
 RUN conda install -c conda-forge coloredlogs notebook
 
+# Numpy==1.17.4 and TF1.15.0
+# https://github.com/tensorflow/models/issues/2961
+
 RUN pip --no-cache-dir install \
     future>=0.17.1 \
     grpcio \
@@ -71,7 +74,7 @@ RUN pip --no-cache-dir install \
     keras_applications>=1.0.8 \
     keras_preprocessing>=1.1.0 \
     mock \
-    numpy \
+    numpy==1.17.4 \
     requests \
     opencv-python \
     scipy>=0.17.0 \
@@ -83,6 +86,7 @@ RUN pip --no-cache-dir install \
     tensorflow-gpu==1.15.0 \
     tensorboard==1.15.0 \
     pyyaml \
+    absl-py \
     labelImg
 
 # Setup Work dirs
